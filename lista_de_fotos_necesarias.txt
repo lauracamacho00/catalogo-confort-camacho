@@ -1,0 +1,73 @@
+LISTA DE FOTOS PARA EL CATALOGO DE DON RELLENO
+================================================
+Instrucciones: guarda cada foto en la carpeta 'fotos' (al lado del archivo
+catalogo-don-relleno.html) con EXACTAMENTE el nombre de archivo indicado.
+Formato admitido: .jpg  (si usas .png o .jpeg, dimelo y ajusto el catalogo)
+
+Cojines a medida (varios modelos sin catalogar)         -> fotos/cojines-a-medida-varios-modelos-sin-catalogar.jpg
+Cojines modelo 190                                      -> fotos/cojines-modelo-190.jpg
+Cojines modelo 40                                       -> fotos/cojines-modelo-40.jpg
+Cojines modelo 400                                      -> fotos/cojines-modelo-400.jpg
+Cojines modelo 49                                       -> fotos/cojines-modelo-49.jpg
+Cojines modelo 500                                      -> fotos/cojines-modelo-500.jpg
+Cojines modelo 65                                       -> fotos/cojines-modelo-65.jpg
+Cojines modelo Almería                                  -> fotos/cojines-modelo-almeria.jpg
+Cojines modelo Andrea                                   -> fotos/cojines-modelo-andrea.jpg
+Cojines modelo Atlas                                    -> fotos/cojines-modelo-atlas.jpg
+Cojines modelo Bolero                                   -> fotos/cojines-modelo-bolero.jpg
+Cojines modelo Boston                                   -> fotos/cojines-modelo-boston.jpg
+Cojines modelo Cama                                     -> fotos/cojines-modelo-cama.jpg
+Cojines modelo Carmen                                   -> fotos/cojines-modelo-carmen.jpg
+Cojines modelo Dance                                    -> fotos/cojines-modelo-dance.jpg
+Cojines modelo Deluxe                                   -> fotos/cojines-modelo-deluxe.jpg
+Cojines modelo Eli                                      -> fotos/cojines-modelo-eli.jpg
+Cojines modelo Granada                                  -> fotos/cojines-modelo-granada.jpg
+Cojines modelo Indie                                    -> fotos/cojines-modelo-indie.jpg
+Cojines modelo Janira                                   -> fotos/cojines-modelo-janira.jpg
+Cojines modelo Karma                                    -> fotos/cojines-modelo-karma.jpg
+Cojines modelo Keta                                     -> fotos/cojines-modelo-keta.jpg
+Cojines modelo Kore                                     -> fotos/cojines-modelo-kore.jpg
+Cojines modelo Lina                                     -> fotos/cojines-modelo-lina.jpg
+Cojines modelo Loft                                     -> fotos/cojines-modelo-loft.jpg
+Cojines modelo Luna                                     -> fotos/cojines-modelo-luna.jpg
+Cojines modelo Marbella                                 -> fotos/cojines-modelo-marbella.jpg
+Cojines modelo Maria                                    -> fotos/cojines-modelo-maria.jpg
+Cojines modelo Michigan                                 -> fotos/cojines-modelo-michigan.jpg
+Cojines modelo Mini                                     -> fotos/cojines-modelo-mini.jpg
+Cojines modelo Moon                                     -> fotos/cojines-modelo-moon.jpg
+Cojines modelo Nova                                     -> fotos/cojines-modelo-nova.jpg
+Cojines modelo París                                    -> fotos/cojines-modelo-paris.jpg
+Cojines modelo Sandra                                   -> fotos/cojines-modelo-sandra.jpg
+Cojines modelo Sensación                                -> fotos/cojines-modelo-sensacion.jpg
+Cojines modelo Star                                     -> fotos/cojines-modelo-star.jpg
+Cojines modelo Titán                                    -> fotos/cojines-modelo-titan.jpg
+Cojines modelo Vega                                     -> fotos/cojines-modelo-vega.jpg
+Cojines modelo Venus                                    -> fotos/cojines-modelo-venus.jpg
+Cojines modelo Victoria                                 -> fotos/cojines-modelo-victoria.jpg
+Cojines modelo Zeus                                     -> fotos/cojines-modelo-zeus.jpg
+Deslizantes                                             -> fotos/deslizante.jpg
+Patas (varias medidas y acabados)                       -> fotos/pata.jpg
+Cincha                                                  -> fotos/cincha.jpg
+Mecanismos                                              -> fotos/mecanismo.jpg
+Borra de relleno                                        -> fotos/borra.jpg
+Punzonado/TNT                                           -> fotos/punzonado-tnt.jpg
+Pletina de hierro                                       -> fotos/pletina-de-hierro.jpg
+Casquillo                                               -> fotos/casquillo.jpg
+Velcro / cintas de cierre                               -> fotos/velcro.jpg
+Guata a granel                                          -> fotos/guata.jpg
+Cola/adhesivo                                           -> fotos/cola-adhesivo.jpg
+Cherlones                                               -> fotos/cherlong.jpg
+Rafia                                                   -> fotos/rafia.jpg
+Goma elástica                                           -> fotos/goma-elastica.jpg
+Anagrama                                                -> fotos/anagrama.jpg
+Guía                                                    -> fotos/guia.jpg
+Precinto                                                -> fotos/precinto.jpg
+Amortiguador canapé                                     -> fotos/amortiguador-canape.jpg
+Spray                                                   -> fotos/spray.jpg
+Listón                                                  -> fotos/liston.jpg
+Cabecero                                                -> fotos/cabecero.jpg
+Sofá completo                                           -> fotos/sofa-completo.jpg
+Colchoneta                                              -> fotos/colchoneta.jpg
+Sillón completo                                         -> fotos/sillon-completo.jpg
+Arcón canapé                                            -> fotos/arcon-canape.jpg
+Cama italiana completa                                  -> fotos/cama-italiana-completa.jpg

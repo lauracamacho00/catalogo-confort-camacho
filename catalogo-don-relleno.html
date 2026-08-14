@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don Relleno — Camacho · Catálogo</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root{
+  --navy: #1F3864;
+  --navy-deep: #14243F;
+  --slate: #4A6FA5;
+  --linen: #F3EEE4;
+  --linen-deep: #E9E1D2;
+  --ink: #26282B;
+  --brass: #B08D57;
+  --brass-deep: #8C6D3F;
+  --stitch: repeating-linear-gradient(90deg, var(--brass) 0 8px, transparent 8px 16px);
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background: var(--linen);
+  color: var(--ink);
+  font-family:'Work Sans', sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color: var(--brass-deep);
+}
+
+.stitch{ height:2px; background: var(--stitch); border:none; margin:0; }
+
+/* ---------- header ---------- */
+header{
+  position:sticky; top:0; z-index:50;
+  background: rgba(243,238,228,.92);
+  backdrop-filter: blur(6px);
+  border-bottom:1px solid var(--linen-deep);
+}
+.nav-inner{
+  max-width:1180px; margin:0 auto; padding:16px 28px;
+  display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+}
+.brand{ display:flex; align-items:center; gap:12px; }
+.brand-mark{
+  width:34px; height:34px; border-radius:9px;
+  background: var(--navy);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--linen); font-family:'Fraunces',serif; font-weight:600; font-size:16px;
+  flex-shrink:0;
+}
+.brand-name{ font-family:'Fraunces',serif; font-weight:600; font-size:19px; color:var(--navy-deep); line-height:1.1; }
+.brand-sub{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.08em; color:var(--brass-deep); }
+
+.search{
+  flex:1; min-width:180px; max-width:340px;
+  display:flex; align-items:center; gap:8px;
+  background:#fff; border:1px solid var(--linen-deep); border-radius:100px;
+  padding:9px 16px;
+}
+.search input{
+  border:none; outline:none; font-family:'Work Sans',sans-serif; font-size:13.5px;
+  width:100%; background:transparent; color:var(--ink);
+}
+.search svg{ width:14px; height:14px; color:var(--brass-deep); flex-shrink:0; }
+
+.btn-wa{
+  display:inline-flex; align-items:center; gap:8px;
+  background: var(--navy); color:var(--linen);
+  padding:10px 18px; border-radius:100px;
+  font-size:13.5px; font-weight:500; text-decoration:none;
+  transition: background .15s ease, transform .15s ease;
+  white-space:nowrap;
+}
+.btn-wa:hover{ background: var(--navy-deep); transform: translateY(-1px); }
+.btn-wa svg{ width:15px; height:15px; flex-shrink:0; }
+
+/* ---------- hero ---------- */
+.hero{ max-width:1180px; margin:0 auto; padding:64px 28px 40px; }
+.hero-grid{ display:grid; grid-template-columns: 1.25fr .85fr; gap:56px; align-items:end; }
+@media (max-width: 860px){ .hero-grid{ grid-template-columns:1fr; gap:32px; } }
+
+.hero h1{
+  font-family:'Fraunces', serif; font-weight:500;
+  font-size: clamp(34px, 4.8vw, 54px); line-height:1.05; letter-spacing:-.01em;
+  color: var(--navy-deep); margin: 14px 0 0;
+}
+.hero h1 em{ font-style:italic; color:var(--brass-deep); }
+.hero-desc{ font-size:16px; line-height:1.65; color:#4a4d52; max-width:40ch; padding-top:6px; }
+.hero-desc strong{ color:var(--ink); }
+
+.hero-meta{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--navy); display:flex; flex-direction:column; gap:10px; padding-bottom:4px; }
+.hero-meta .row{ display:flex; justify-content:space-between; border-bottom:1px dashed var(--linen-deep); padding-bottom:10px; }
+.hero-meta .row span:last-child{ color:#7a7d82; }
+
+.note-banner{ max-width:1180px; margin:0 auto; padding:0 28px; }
+.note-banner .box{
+  border:1px dashed var(--brass); background:rgba(176,141,87,.08);
+  border-radius:12px; padding:14px 18px; font-size:13px; color:var(--brass-deep); line-height:1.5;
+}
+
+/* ---------- category nav ---------- */
+.catnav{ max-width:1180px; margin:0 auto; padding:28px 28px 8px; display:flex; flex-wrap:wrap; gap:10px; }
+.catnav button{
+  font-family:'Work Sans',sans-serif; font-size:13.5px; font-weight:500;
+  padding:9px 16px; border-radius:100px; border:1px solid var(--linen-deep);
+  background: transparent; color: var(--ink); cursor:pointer; transition: all .15s ease;
+}
+.catnav button:hover{ border-color: var(--brass); }
+.catnav button.active{ background: var(--navy); border-color: var(--navy); color: var(--linen); }
+
+/* ---------- product grid ---------- */
+.section-label{ max-width:1180px; margin:36px auto 18px; padding:0 28px; display:flex; align-items:baseline; gap:14px; }
+.section-label h2{ font-family:'Fraunces',serif; font-weight:500; font-size:23px; color:var(--navy-deep); margin:0; }
+.section-label .count{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--brass-deep); }
+
+.grid{ max-width:1180px; margin:0 auto 20px; padding:0 28px; display:grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap:22px; }
+
+.card{
+  background:#fff; border:1px solid var(--linen-deep); border-radius:14px; overflow:hidden;
+  display:flex; flex-direction:column; transition: transform .18s ease, box-shadow .18s ease;
+}
+.card:hover{ transform: translateY(-3px); box-shadow: 0 14px 30px -18px rgba(31,56,100,.35); }
+
+.card-swatch{
+  height:150px; position:relative; display:flex; align-items:center; justify-content:center;
+  color: rgba(255,255,255,.92); overflow:hidden;
+}
+.card-swatch img{ width:100%; height:100%; object-fit:cover; }
+.card-swatch .ph::after{
+  content:"foto pendiente"; position:absolute; bottom:9px; right:12px;
+  font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.06em;
+  color: rgba(255,255,255,.55); text-transform:uppercase;
+}
+.card-swatch .monogram{ font-family:'Fraunces',serif; font-size:34px; font-weight:500; opacity:.85; }
+
+.card-body{ padding:15px 16px 17px; display:flex; flex-direction:column; gap:8px; flex:1; }
+.card-cat{ font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--brass-deep); }
+.card-name{ font-size:14.5px; font-weight:500; line-height:1.32; color:var(--ink); }
+.card-detalle{ font-size:12px; color:#7d7f84; line-height:1.4; flex:1; }
+.card-cta{
+  display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:500; color:var(--navy);
+  text-decoration:none; padding-top:9px; border-top:1px dashed var(--linen-deep); margin-top:2px;
+}
+.card-cta:hover{ color:var(--brass-deep); }
+.card-cta svg{ width:12.5px; height:12.5px; }
+
+.empty-msg{ max-width:1180px; margin:0 auto; padding:20px 28px; color:#7d7f84; font-size:14px; }
+
+/* ---------- footer ---------- */
+footer{ margin-top:60px; background:var(--navy-deep); color:var(--linen); }
+.footer-inner{ max-width:1180px; margin:0 auto; padding:44px 28px 34px; display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+.footer-inner h3{ font-family:'Fraunces',serif; font-weight:500; font-size:19px; margin:0 0 8px; }
+.footer-inner p{ font-size:13.5px; opacity:.75; margin:0; max-width:32ch; line-height:1.55;}
+.footer-contact{ font-family:'IBM Plex Mono',monospace; font-size:12.5px; opacity:.85; display:flex; flex-direction:column; gap:6px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-mark">DR</div>
+      <div>
+        <div class="brand-name">Don Relleno</div>
+        <div class="brand-sub">CAMACHO · ARTÍCULOS PARA TAPICERÍA</div>
+      </div>
+    </div>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="searchInput" type="text" placeholder="Buscar en el catálogo…">
+    </div>
+    <a class="btn-wa" href="https://wa.me/34656970371?text=Hola%2C%20quer%C3%ADa%20consultar%20disponibilidad%20y%20precio" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.09c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.29.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.29.14.46.12.63-.07.17-.2.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.65.78 1.93.92.29.14.48.21.55.33.07.12.07.68-.16 1.36z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+  <div class="stitch"></div>
+</header>
+
+<div class="hero">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow">Almacén y taller · Fuensanta de Martos, Jaén</span>
+      <h1>Todo lo que necesita<br>un tapicero, <em>cosido y servido</em> al detalle.</h1>
+      <div style="height:20px"></div>
+      <hr class="stitch" style="max-width:120px">
+      <div style="height:16px"></div>
+      <p class="hero-desc">Distribuimos mercancía de tapicería y <strong>fabricamos cojines a medida</strong> para talleres de toda Andalucía. Este catálogo es orientativo — para precio, stock y plazos, escríbenos por WhatsApp.</p>
+    </div>
+    <div class="hero-meta">
+      <div class="row"><span>Cojines a medida</span><span>42 modelos</span></div>
+      <div class="row"><span>Deslizantes y mecanismos</span><span>por modelo</span></div>
+      <div class="row"><span>Guata y relleno a granel</span><span>por rollo</span></div>
+      <div class="row"><span>Reparto</span><span>Jaén y Córdoba</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="note-banner">
+  <div class="box">
+    <strong>Cómo añadir las fotos:</strong> crea una carpeta llamada <code>fotos</code> justo al lado de este archivo HTML, y guarda cada foto con el nombre exacto que indica el archivo <code>lista_de_fotos_necesarias.txt</code> (formato .jpg). En cuanto la foto exista con ese nombre, aparecerá aquí sola — no hace falta tocar ni una línea de este archivo.
+  </div>
+</div>
+
+<nav class="catnav" id="catnav"></nav>
+
+<div id="catalogo">
+  <div class="section-label"><h2>Catálogo</h2><span class="count" id="count"></span></div>
+  <div class="grid" id="grid"></div>
+  <div class="empty-msg" id="emptyMsg" style="display:none;">No hay resultados para esa búsqueda.</div>
+</div>
+
+<footer id="contacto">
+  <div class="footer-inner">
+    <div>
+      <h3>Don Relleno — Camacho</h3>
+      <p>Relleno industrial para tapizados. Distribución de mercancía y fabricación de cojines a medida.</p>
+    </div>
+    <div class="footer-contact">
+      <span>C/ Banderas 15, 23610 Fuensanta de Martos (Jaén)</span>
+      <span>656 970 371 · 678 887 191</span>
+      <span>donrelleno@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const CATEGORIAS = [
+  {key:"cojin",   label:"Cojines a medida",           color1:"#1F3864", color2:"#3C5C93", mono:"C"},
+  {key:"desliz",  label:"Deslizantes/Mecanismos",      color1:"#3C5C93", color2:"#6F8CBE", mono:"D"},
+  {key:"patas",   label:"Patas",                       color1:"#8C6D3F", color2:"#B08D57", mono:"P"},
+  {key:"guata",   label:"Guata / Relleno a granel",    color1:"#6F8CBE", color2:"#9AAFD1", mono:"G"},
+  {key:"mueble",  label:"Mueble completo",             color1:"#14243F", color2:"#1F3864", mono:"M"},
+  {key:"acces",   label:"Accesorios/Consumibles",      color1:"#B08D57", color2:"#C7A876", mono:"A"},
+  {key:"cremall", label:"Cremalleras/Velcro",          color1:"#4A6FA5", color2:"#7B98C2", mono:"V"},
+];
+const CAT_BY_KEY = Object.fromEntries(CATEGORIAS.map(c => [c.key, c]));
+
+// Datos reales del catalogo, generados a partir de PRODUCTOS (Categoria, Familia y Modelo)
+const ITEMS = [{"cat": "cojin", "nombre": "Cojines a medida (varios modelos sin catalogar)", "detalle": "Riñonera · Brazo · Cojín · Juego de cojines", "slug": "cojines-a-medida-varios-modelos-sin-catalogar"}, {"cat": "cojin", "nombre": "Cojines modelo 190", "detalle": "Respaldo · Riñonera", "slug": "cojines-modelo-190"}, {"cat": "cojin", "nombre": "Cojines modelo 40", "detalle": "Respaldo · Riñonera", "slug": "cojines-modelo-40"}, {"cat": "cojin", "nombre": "Cojines modelo 400", "detalle": "Respaldo · Riñonera · Brazo", "slug": "cojines-modelo-400"}, {"cat": "cojin", "nombre": "Cojines modelo 49", "detalle": "Respaldo · Riñonera · Brazo", "slug": "cojines-modelo-49"}, {"cat": "cojin", "nombre": "Cojines modelo 500", "detalle": "Brazo · Cojín", "slug": "cojines-modelo-500"}, {"cat": "cojin", "nombre": "Cojines modelo 65", "detalle": "Respaldo · Cojín", "slug": "cojines-modelo-65"}, {"cat": "cojin", "nombre": "Cojines modelo Almería", "detalle": "Respaldo · Riñonera", "slug": "cojines-modelo-almeria"}, {"cat": "cojin", "nombre": "Cojines modelo Andrea", "detalle": "Respaldo · Riñonera · Brazo", "slug": "cojines-modelo-andrea"}, {"cat": "cojin", "nombre": "Cojines modelo Atlas", "detalle": "Brazo", "slug": "cojines-modelo-atlas"}, {"cat": "cojin", "nombre": "Cojines modelo Bolero", "detalle": "Respaldo · Riñonera", "slug": "cojines-modelo-bolero"}, {"cat": "cojin", "nombre": "Cojines modelo Boston", "detalle": "Brazo", "slug": "cojines-modelo-boston"}, {"cat": "cojin", "nombre": "Cojines modelo Cama", "detalle": "Respaldo", "slug": "cojines-modelo-cama"}, {"cat": "cojin", "nombre": "Cojines modelo Carmen", "detalle": "Respaldo · Riñonera · Brazo · Juego de cojines", "slug": "cojines-modelo-carmen"}, {"cat": "cojin", "nombre": "Cojines modelo Dance", "detalle": "Respaldo · Riñonera · Brazo", "slug": "cojines-modelo-dance"}, {"cat": "cojin", "nombre": "Cojines modelo Deluxe", "detalle": "Respaldo · Riñonera · Brazo", "slug": "cojines-modelo-deluxe"}, {"cat": "cojin", "nombre": "Cojines modelo Eli", "detalle": "Respaldo · Riñonera", "slug": "cojines-modelo-eli"}, {"cat": "cojin", "nombre": "Cojines modelo Granada", "detalle": "Respaldo · Riñonera · Brazo", "slug": "cojines-modelo-granada"}, {"cat": "cojin", "nombre": "Cojines modelo Indie", "detalle": "Brazo", "slug": "cojines-modelo-indie"}, {"cat": "cojin", "nombre": "Cojines modelo Janira", "detalle": "Respaldo · Riñonera · Brazo", "slug": "cojines-modelo-janira"}, {"cat": "cojin", "nombre": "Cojines modelo Karma", "detalle": "Respaldo · Riñonera", "slug": "cojines-modelo-karma"}, {"cat": "cojin", "nombre": "Cojines modelo Keta", "detalle": "Juego de cojines", "slug": "cojines-modelo-keta"}, {"cat": "cojin", "nombre": "Cojines modelo Kore", "detalle": "Respaldo · Brazo", "slug": "cojines-modelo-kore"}, {"cat": "cojin", "nombre": "Cojines modelo Lina", "detalle": "Respaldo · Riñonera · Brazo", "slug": "cojines-modelo-lina"}, {"cat": "cojin", "nombre": "Cojines modelo Loft", "detalle": "Respaldo · Riñonera · Brazo", "slug": "cojines-modelo-loft"}, {"cat": "cojin", "nombre": "Cojines modelo Luna", "detalle": "Respaldo · Riñonera · Brazo", "slug": "cojines-modelo-luna"}, {"cat": "cojin", "nombre": "Cojines modelo Marbella", "detalle": "Respaldo · Brazo", "slug": "cojines-modelo-marbella"}, {"cat": "cojin", "nombre": "Cojines modelo Maria", "detalle": "Respaldo · Riñonera", "slug": "cojines-modelo-maria"}, {"cat": "cojin", "nombre": "Cojines modelo Michigan", "detalle": "Riñonera", "slug": "cojines-modelo-michigan"}, {"cat": "cojin", "nombre": "Cojines modelo Mini", "detalle": "Respaldo · Riñonera · Brazo", "slug": "cojines-modelo-mini"}, {"cat": "cojin", "nombre": "Cojines modelo Moon", "detalle": "Respaldo · Riñonera · Brazo", "slug": "cojines-modelo-moon"}, {"cat": "cojin", "nombre": "Cojines modelo Nova", "detalle": "Respaldo · Riñonera · Cojín", "slug": "cojines-modelo-nova"}, {"cat": "cojin", "nombre": "Cojines modelo París", "detalle": "Respaldo · Riñonera · Brazo", "slug": "cojines-modelo-paris"}, {"cat": "cojin", "nombre": "Cojines modelo Sandra", "detalle": "Respaldo · Riñonera", "slug": "cojines-modelo-sandra"}, {"cat": "cojin", "nombre": "Cojines modelo Sensación", "detalle": "Respaldo · Riñonera · Brazo", "slug": "cojines-modelo-sensacion"}, {"cat": "cojin", "nombre": "Cojines modelo Star", "detalle": "Respaldo · Brazo", "slug": "cojines-modelo-star"}, {"cat": "cojin", "nombre": "Cojines modelo Titán", "detalle": "Respaldo · Riñonera · Cojín", "slug": "cojines-modelo-titan"}, {"cat": "cojin", "nombre": "Cojines modelo Vega", "detalle": "Brazo · Cojín", "slug": "cojines-modelo-vega"}, {"cat": "cojin", "nombre": "Cojines modelo Venus", "detalle": "Brazo", "slug": "cojines-modelo-venus"}, {"cat": "cojin", "nombre": "Cojines modelo Victoria", "detalle": "Respaldo · Riñonera · Brazo · Cojín", "slug": "cojines-modelo-victoria"}, {"cat": "cojin", "nombre": "Cojines modelo Zeus", "detalle": "Respaldo · Riñonera", "slug": "cojines-modelo-zeus"}, {"cat": "desliz", "nombre": "Deslizantes", "detalle": "26 referencias · ej. Deslizantes MºBuque Medida 71x79/Muelles ZZ", "slug": "deslizante"}, {"cat": "patas", "nombre": "Patas (varias medidas y acabados)", "detalle": "50 referencias · ej. Patas del Nº1 Cromadas", "slug": "pata"}, {"cat": "acces", "nombre": "Cincha", "detalle": "6 referencias · ej. Cincha 419 (1 paquete 1000 m)", "slug": "cincha"}, {"cat": "desliz", "nombre": "Mecanismos", "detalle": "1 referencia · ej. Mecanismos del MºRelax", "slug": "mecanismo"}, {"cat": "guata", "nombre": "Borra de relleno", "detalle": "10 referencias · ej. Borra de 50 cm", "slug": "borra"}, {"cat": "acces", "nombre": "Punzonado/TNT", "detalle": "7 referencias · ej. Pieza de TNT Blanco", "slug": "punzonado-tnt"}, {"cat": "acces", "nombre": "Pletina de hierro", "detalle": "2 referencias · ej. Pletinas de hierro de 31cm", "slug": "pletina-de-hierro"}, {"cat": "acces", "nombre": "Casquillo", "detalle": "1 referencia · ej. Casquillos para ovalos", "slug": "casquillo"}, {"cat": "cremall", "nombre": "Velcro / cintas de cierre", "detalle": "4 referencias · ej. 20 Rollos de Belcro de 5cm", "slug": "velcro"}, {"cat": "guata", "nombre": "Guata a granel", "detalle": "10 referencias · ej. Rollos de Guata de 300", "slug": "guata"}, {"cat": "acces", "nombre": "Cola/adhesivo", "detalle": "2 referencias · ej. Pistola de Cola Spray", "slug": "cola-adhesivo"}, {"cat": "desliz", "nombre": "Cherlones", "detalle": "7 referencias · ej. Cherlones del MºParís de 3plz picado", "slug": "cherlong"}, {"cat": "acces", "nombre": "Rafia", "detalle": "5 referencias · ej. Rafia de 90cm", "slug": "rafia"}, {"cat": "acces", "nombre": "Goma elástica", "detalle": "2 referencias · ej. Rollos de Goma elástica", "slug": "goma-elastica"}, {"cat": "acces", "nombre": "Anagrama", "detalle": "1 referencia · ej. Anagramas", "slug": "anagrama"}, {"cat": "acces", "nombre": "Guía", "detalle": "2 referencias · ej. Guias de 77cm con tapones", "slug": "guia"}, {"cat": "acces", "nombre": "Precinto", "detalle": "1 referencia · ej. Precinto Acrilico Transperente", "slug": "precinto"}, {"cat": "acces", "nombre": "Amortiguador canapé", "detalle": "1 referencia · ej. Amortiguador de canape con gas de 350NW", "slug": "amortiguador-canape"}, {"cat": "acces", "nombre": "Spray", "detalle": "1 referencia · ej. Spray Moldeante", "slug": "spray"}, {"cat": "acces", "nombre": "Listón", "detalle": "6 referencias · ej. Liston 170cm Wengue", "slug": "liston"}, {"cat": "acces", "nombre": "Cabecero", "detalle": "1 referencia · ej. Cabeceros hasta 70cm", "slug": "cabecero"}, {"cat": "mueble", "nombre": "Sofá completo", "detalle": "14 modelos · ej. Sofás del Mº65 de 3plz", "slug": "sofa-completo"}, {"cat": "mueble", "nombre": "Colchoneta", "detalle": "3 modelos · ej. Colchoneta Convertible de 140x190", "slug": "colchoneta"}, {"cat": "mueble", "nombre": "Sillón completo", "detalle": "14 modelos · ej. Sillones del MºVenus", "slug": "sillon-completo"}, {"cat": "mueble", "nombre": "Arcón canapé", "detalle": "1 modelo · ej. Arcones canape de 68x130", "slug": "arcon-canape"}, {"cat": "mueble", "nombre": "Cama italiana completa", "detalle": "2 modelos · ej. Cama italiano del MºCalifornia de 17cm completo", "slug": "cama-italiana-completa"}];
+
+const catnav = document.getElementById("catnav");
+const grid = document.getElementById("grid");
+const countEl = document.getElementById("count");
+const emptyMsg = document.getElementById("emptyMsg");
+const searchInput = document.getElementById("searchInput");
+
+let activeCat = "all";
+let query = "";
+
+const allBtn = document.createElement("button");
+allBtn.textContent = "Todas";
+allBtn.className = "active";
+allBtn.onclick = () => { activeCat = "all"; syncButtons(); render(); };
+catnav.appendChild(allBtn);
+
+CATEGORIAS.forEach(c => {
+  const b = document.createElement("button");
+  b.textContent = c.label;
+  b.onclick = () => { activeCat = c.key; syncButtons(); render(); };
+  catnav.appendChild(b);
+});
+
+function syncButtons(){
+  [...catnav.children].forEach((btn, i) => {
+    const key = i === 0 ? "all" : CATEGORIAS[i-1].key;
+    btn.classList.toggle("active", key === activeCat);
+  });
+}
+
+function waLink(nombre){
+  const text = encodeURIComponent(`Hola, quería consultar precio y disponibilidad de: ${nombre}`);
+  return `https://wa.me/34656970371?text=${text}`;
+}
+
+searchInput.addEventListener("input", (e) => { query = e.target.value.trim().toLowerCase(); render(); });
+
+function render(){
+  const filtered = ITEMS.filter(it =>
+    (activeCat === "all" || it.cat === activeCat) &&
+    (query === "" || it.nombre.toLowerCase().includes(query) || it.detalle.toLowerCase().includes(query))
+  );
+  grid.innerHTML = "";
+  filtered.forEach(it => {
+    const c = CAT_BY_KEY[it.cat];
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="card-swatch ph" style="background: linear-gradient(135deg, ${c.color1}, ${c.color2});">
+        <span class="monogram">${c.mono}</span>
+        <img src="fotos/${it.slug}.jpg" alt="${it.nombre}"
+             onload="this.parentElement.classList.remove('ph'); this.parentElement.querySelector('.monogram').style.display='none';"
+             onerror="this.style.display='none';">
+      </div>
+      <div class="card-body">
+        <span class="card-cat">${c.label}</span>
+        <span class="card-name">${it.nombre}</span>
+        <span class="card-detalle">${it.detalle}</span>
+        <a class="card-cta" href="${waLink(it.nombre)}" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.09c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.29.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.29.14.46.12.63-.07.17-.2.71-.83.9-1.11.19-.29.38-.24.63-.14.26.1 1.65.78 1.93.92.29.14.48.21.55.33.07.12.07.68-.16 1.36z"/></svg>
+          Consultar por WhatsApp
+        </a>
+      </div>`;
+    grid.appendChild(card);
+  });
+  countEl.textContent = `${filtered.length} referencia${filtered.length===1?"":"s"}`;
+  emptyMsg.style.display = filtered.length === 0 ? "block" : "none";
+}
+
+render();
+</script>
+
+</body>
+</html>
